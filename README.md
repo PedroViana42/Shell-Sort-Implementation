@@ -4,12 +4,12 @@ Este repositório contém duas implementações do algoritmo **Shell Sort** em P
 
 ## Estruturas Implementadas
 
-### 1. Array Nativo ([shell_sort_array.py](file:///media/pedro/599939bf-8c5c-4b9d-b8dc-fccb1af3da77/Faculdade/Projeto e Analise De Algoritmos/Atividade/shell_sort_array.py))
+### 1. Array Nativo (`shell_sort_array.py`)
 *   **Tamanho do teste ($N$):** 5000
 *   **Performance:** Extremamente alta devido ao acesso aleatório $O(1)$.
 *   **Uso:** Ideal para produção e grandes volumes de dados.
 
-### 2. Lista Simplesmente Encadeada ([shell_sort_linked_list.py](file:///media/pedro/599939bf-8c5c-4b9d-b8dc-fccb1af3da77/Faculdade/Projeto e Analise De Algoritmos/Atividade/shell_sort_linked_list.py))
+### 2. Lista Simplesmente Encadeada (`shell_sort_linked_list.py`)
 *   **Tamanho do teste ($N$):** 1000
 *   **Performance:** Baixa devido ao custo de travessia $O(n)$ para acessar cada gap.
 *   **Uso:** Fins acadêmicos para demonstrar limitações de estruturas de dados.
