@@ -1,31 +1,46 @@
-# Shell Sort em Linked List
+# Shell Sort Implementation
 
-Este projeto implementa o algoritmo Shell Sort utilizando uma estrutura de **Lista Simplesmente Encadeada** (Singly Linked List) em Python, comparando tempos de execução em três cenários diferentes.
+Este repositório contém duas implementações do algoritmo **Shell Sort** em Python, explorando o impacto de diferentes estruturas de dados na performance do algoritmo.
+
+## Estruturas Implementadas
+
+### 1. Array Nativo ([shell_sort_array.py](file:///media/pedro/599939bf-8c5c-4b9d-b8dc-fccb1af3da77/Faculdade/Projeto e Analise De Algoritmos/Atividade/shell_sort_array.py))
+*   **Tamanho do teste ($N$):** 5000
+*   **Performance:** Extremamente alta devido ao acesso aleatório $O(1)$.
+*   **Uso:** Ideal para produção e grandes volumes de dados.
+
+### 2. Lista Simplesmente Encadeada ([shell_sort_linked_list.py](file:///media/pedro/599939bf-8c5c-4b9d-b8dc-fccb1af3da77/Faculdade/Projeto e Analise De Algoritmos/Atividade/shell_sort_linked_list.py))
+*   **Tamanho do teste ($N$):** 1000
+*   **Performance:** Baixa devido ao custo de travessia $O(n)$ para acessar cada gap.
+*   **Uso:** Fins acadêmicos para demonstrar limitações de estruturas de dados.
 
 ## Como Executar
 
-Para rodar o script e ver os tempos de execução:
+Para rodar a versão com **Array**:
+```bash
+python3 shell_sort_array.py
+```
+
+Para rodar a versão com **Linked List**:
 ```bash
 python3 shell_sort_linked_list.py
 ```
 
 ## Explicação Técnica
 
-O Shell Sort é uma extensão do Insertion Sort que permite a troca de elementos distantes entre si através de um "gap" (intervalo). Embora seja eficiente em arrays, sua performance degrada significativamente ao ser aplicado em listas encadeadas.
+O Shell Sort é uma extensão do Insertion Sort que permite a troca de elementos distantes entre si através de um "gap" (intervalo). A eficiência deste "salto" depende diretamente da velocidade de acesso aos elementos.
 
 ### O Problema do Acesso Aleatório
 
-A principal razão para a ineficiência reside na natureza do acesso aos dados:
+1.  **Arrays (O(1)):** O acesso a qualquer elemento pelo seu índice é imediato. O Shell Sort tira proveito pródigo desta propriedade.
+2.  **Listas Encadeadas (O(n)):** Para acessar um nó em um índice específico (necessário para calcular o gap), a estrutura percorre todos os nós anteriores. Isso torna o algoritmo substancialmente mais lento.
 
-1.  **Arrays (O(1)):** O acesso a qualquer elemento pelo seu índice é imediato.
-2.  **Listas Encadeadas (O(n)):** Para acessar um nó em um índice específico, é necessário percorrer a lista desde a cabeça (`head`).
+### Comparação de Performance
 
-### Impacto na Complexidade
+| Estrutura | $N$ | Tempo Médio (aprox.) |
+| :--- | :--- | :--- |
+| Array | 5000 | ~0.05 segundos |
+| Linked List | 1000 | ~1.80 segundos |
 
-No Shell Sort, para cada elemento no loop externo, realizamos múltiplas buscas de nós em posições distantes:
--   No melhor caso (array), a complexidade é aproximadamente $O(n \log n)$.
--   Na lista encadeada, como cada "acesso indexado" custa $O(n)$, a complexidade real acaba sendo multiplicada, resultando em algo próximo de **$O(n^2 \log n)$** ou pior.
-
-### Conclusão
-
-Embora a lógica de gaps ainda funcione, o **custo de travessia** anula os benefícios de "pular" elementos. Em listas encadeadas, algoritmos como Merge Sort são muito mais adequados por tirarem proveito da estrutura sequencial.
+> [!IMPORTANT]
+> Note que mesmo com um $N$ cinco vezes maior, a versão com array é ordens de magnitude mais rápida que a versão com lista encadeada.
