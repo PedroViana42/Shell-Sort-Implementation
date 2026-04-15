@@ -1,6 +1,6 @@
 # Shell Sort Implementation
 
-Este repositório contém duas implementações do algoritmo **Shell Sort** em Python, explorando o impacto de diferentes estruturas de dados na performance do algoritmo.
+Este repositório contém diferentes implementações do algoritmo **Shell Sort** em Python, explorando o impacto de estruturas de dados na performance.
 
 ## Estruturas Implementadas
 
@@ -13,6 +13,9 @@ Este repositório contém duas implementações do algoritmo **Shell Sort** em P
 *   **Tamanho do teste ($N$):** 1000
 *   **Performance:** Baixa devido ao custo de travessia $O(n)$ para acessar cada gap.
 *   **Uso:** Fins acadêmicos para demonstrar limitações de estruturas de dados.
+
+### 3. Implementação Alternativa (`shell-sort-guilherme.py`)
+*   Arquivo enviado pelo aluno Guilherme.
 
 ## Como Executar
 
